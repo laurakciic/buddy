@@ -9,19 +9,41 @@
 /* Begin PBXBuildFile section */
 		D327BC3629B36AD900C620F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC3529B36AD900C620F5 /* AppDelegate.swift */; };
 		D327BC3829B36AD900C620F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC3729B36AD900C620F5 /* SceneDelegate.swift */; };
-		D327BC3A29B36AD900C620F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC3929B36AD900C620F5 /* ViewController.swift */; };
 		D327BC3F29B36ADB00C620F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D327BC3E29B36ADB00C620F5 /* Assets.xcassets */; };
 		D327BC4229B36ADB00C620F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D327BC4029B36ADB00C620F5 /* LaunchScreen.storyboard */; };
+		D327BC5329B36F0800C620F5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC5229B36F0800C620F5 /* Coordinator.swift */; };
+		D327BC5529B36F3B00C620F5 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC5429B36F3B00C620F5 /* RootCoordinator.swift */; };
+		D327BC5729B36FA800C620F5 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC5629B36FA800C620F5 /* AuthenticationCoordinator.swift */; };
+		D327BC5929B3702100C620F5 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC5829B3702100C620F5 /* MainCoordinator.swift */; };
+		D327BC5B29B3705C00C620F5 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC5A29B3705C00C620F5 /* MapCoordinator.swift */; };
+		D327BC5D29B3706E00C620F5 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC5C29B3706E00C620F5 /* MapViewModel.swift */; };
+		D327BC6029B3709D00C620F5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC5F29B3709D00C620F5 /* MapView.swift */; };
+		D327BC6229B370CC00C620F5 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC6129B370CC00C620F5 /* ProfileCoordinator.swift */; };
+		D327BC6529B370F100C620F5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC6429B370F100C620F5 /* ProfileViewModel.swift */; };
+		D327BC6729B3710500C620F5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC6629B3710500C620F5 /* ProfileView.swift */; };
+		D327BC6929B3716400C620F5 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC6829B3716400C620F5 /* AuthenticationView.swift */; };
+		D327BC6B29B3719300C620F5 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC6A29B3719300C620F5 /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D327BC3229B36AD900C620F5 /* buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D327BC3529B36AD900C620F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D327BC3729B36AD900C620F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D327BC3929B36AD900C620F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D327BC3E29B36ADB00C620F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D327BC4129B36ADB00C620F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D327BC4329B36ADB00C620F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D327BC5229B36F0800C620F5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D327BC5429B36F3B00C620F5 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		D327BC5629B36FA800C620F5 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
+		D327BC5829B3702100C620F5 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		D327BC5A29B3705C00C620F5 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		D327BC5C29B3706E00C620F5 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		D327BC5F29B3709D00C620F5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		D327BC6129B370CC00C620F5 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		D327BC6429B370F100C620F5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		D327BC6629B3710500C620F5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D327BC6829B3716400C620F5 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		D327BC6A29B3719300C620F5 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +80,6 @@
 				D327BC4A29B36D7E00C620F5 /* resources */,
 				D327BC3529B36AD900C620F5 /* AppDelegate.swift */,
 				D327BC3729B36AD900C620F5 /* SceneDelegate.swift */,
-				D327BC3929B36AD900C620F5 /* ViewController.swift */,
 				D327BC4029B36ADB00C620F5 /* LaunchScreen.storyboard */,
 				D327BC4329B36ADB00C620F5 /* Info.plist */,
 			);
@@ -68,6 +89,10 @@
 		D327BC4929B36D7500C620F5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D327BC5229B36F0800C620F5 /* Coordinator.swift */,
+				D327BC5429B36F3B00C620F5 /* RootCoordinator.swift */,
+				D327BC4B29B36E7800C620F5 /* authentication */,
+				D327BC4C29B36E9200C620F5 /* main */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -78,6 +103,86 @@
 				D327BC3E29B36ADB00C620F5 /* Assets.xcassets */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		D327BC4B29B36E7800C620F5 /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D327BC4D29B36EBA00C620F5 /* view */,
+				D327BC6A29B3719300C620F5 /* AuthenticationViewModel.swift */,
+				D327BC5629B36FA800C620F5 /* AuthenticationCoordinator.swift */,
+				D327BC4F29B36ECF00C620F5 /* register */,
+				D327BC4E29B36EC100C620F5 /* login */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		D327BC4C29B36E9200C620F5 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				D327BC5829B3702100C620F5 /* MainCoordinator.swift */,
+				D327BC5129B36EF400C620F5 /* map */,
+				D327BC5029B36EEC00C620F5 /* profile */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		D327BC4D29B36EBA00C620F5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D327BC6829B3716400C620F5 /* AuthenticationView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D327BC4E29B36EC100C620F5 /* login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		D327BC4F29B36ECF00C620F5 /* register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = register;
+			sourceTree = "<group>";
+		};
+		D327BC5029B36EEC00C620F5 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				D327BC6329B370DB00C620F5 /* view */,
+				D327BC6429B370F100C620F5 /* ProfileViewModel.swift */,
+				D327BC6129B370CC00C620F5 /* ProfileCoordinator.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		D327BC5129B36EF400C620F5 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				D327BC5E29B3709300C620F5 /* view */,
+				D327BC5C29B3706E00C620F5 /* MapViewModel.swift */,
+				D327BC5A29B3705C00C620F5 /* MapCoordinator.swift */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
+		D327BC5E29B3709300C620F5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D327BC5F29B3709D00C620F5 /* MapView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D327BC6329B370DB00C620F5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D327BC6629B3710500C620F5 /* ProfileView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +255,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D327BC3A29B36AD900C620F5 /* ViewController.swift in Sources */,
+				D327BC5529B36F3B00C620F5 /* RootCoordinator.swift in Sources */,
+				D327BC5929B3702100C620F5 /* MainCoordinator.swift in Sources */,
+				D327BC6B29B3719300C620F5 /* AuthenticationViewModel.swift in Sources */,
+				D327BC5B29B3705C00C620F5 /* MapCoordinator.swift in Sources */,
+				D327BC5729B36FA800C620F5 /* AuthenticationCoordinator.swift in Sources */,
+				D327BC6929B3716400C620F5 /* AuthenticationView.swift in Sources */,
+				D327BC6729B3710500C620F5 /* ProfileView.swift in Sources */,
 				D327BC3629B36AD900C620F5 /* AppDelegate.swift in Sources */,
 				D327BC3829B36AD900C620F5 /* SceneDelegate.swift in Sources */,
+				D327BC5329B36F0800C620F5 /* Coordinator.swift in Sources */,
+				D327BC6529B370F100C620F5 /* ProfileViewModel.swift in Sources */,
+				D327BC6029B3709D00C620F5 /* MapView.swift in Sources */,
+				D327BC6229B370CC00C620F5 /* ProfileCoordinator.swift in Sources */,
+				D327BC5D29B3706E00C620F5 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
