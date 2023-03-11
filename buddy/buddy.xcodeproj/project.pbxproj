@@ -25,6 +25,9 @@
 		D327BC6B29B3719300C620F5 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC6A29B3719300C620F5 /* AuthenticationViewModel.swift */; };
 		D327BC6D29B3CAC400C620F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D327BC6C29B3CAC300C620F5 /* GoogleService-Info.plist */; };
 		D327BC7029B3CB7900C620F5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D327BC6F29B3CB7900C620F5 /* FirebaseAuth */; };
+		D327BC7229B3CFF200C620F5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC7129B3CFF200C620F5 /* RegisterView.swift */; };
+		D327BC7729B3D08500C620F5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC7629B3D08500C620F5 /* Color.swift */; };
+		D3FC9D7629B4983000383D83 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FC9D7529B4983000383D83 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		D327BC6829B3716400C620F5 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		D327BC6A29B3719300C620F5 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		D327BC6C29B3CAC300C620F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D327BC7129B3CFF200C620F5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		D327BC7629B3D08500C620F5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D3FC9D7529B4983000383D83 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 		D327BC4A29B36D7E00C620F5 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				D327BC7529B3D07900C620F5 /* colors */,
 				D327BC3E29B36ADB00C620F5 /* Assets.xcassets */,
 			);
 			path = resources;
@@ -143,6 +150,7 @@
 		D327BC4E29B36EC100C620F5 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				D3FC9D7529B4983000383D83 /* LoginView.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 		D327BC4F29B36ECF00C620F5 /* register */ = {
 			isa = PBXGroup;
 			children = (
+				D327BC7129B3CFF200C620F5 /* RegisterView.swift */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -188,6 +197,14 @@
 				D327BC6629B3710500C620F5 /* ProfileView.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		D327BC7529B3D07900C620F5 /* colors */ = {
+			isa = PBXGroup;
+			children = (
+				D327BC7629B3D08500C620F5 /* Color.swift */,
+			);
+			path = colors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,12 +288,15 @@
 				D327BC5929B3702100C620F5 /* MainCoordinator.swift in Sources */,
 				D327BC6B29B3719300C620F5 /* AuthenticationViewModel.swift in Sources */,
 				D327BC5B29B3705C00C620F5 /* MapCoordinator.swift in Sources */,
+				D327BC7729B3D08500C620F5 /* Color.swift in Sources */,
 				D327BC5729B36FA800C620F5 /* AuthenticationCoordinator.swift in Sources */,
 				D327BC6929B3716400C620F5 /* AuthenticationView.swift in Sources */,
+				D327BC7229B3CFF200C620F5 /* RegisterView.swift in Sources */,
 				D327BC6729B3710500C620F5 /* ProfileView.swift in Sources */,
 				D327BC3629B36AD900C620F5 /* AppDelegate.swift in Sources */,
 				D327BC3829B36AD900C620F5 /* SceneDelegate.swift in Sources */,
 				D327BC5329B36F0800C620F5 /* Coordinator.swift in Sources */,
+				D3FC9D7629B4983000383D83 /* LoginView.swift in Sources */,
 				D327BC6529B370F100C620F5 /* ProfileViewModel.swift in Sources */,
 				D327BC6029B3709D00C620F5 /* MapView.swift in Sources */,
 				D327BC6229B370CC00C620F5 /* ProfileCoordinator.swift in Sources */,
@@ -332,6 +352,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -393,6 +414,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -420,6 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4JZ68K34BA;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = buddy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -447,6 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4JZ68K34BA;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = buddy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
