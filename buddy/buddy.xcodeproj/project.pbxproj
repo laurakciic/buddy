@@ -27,6 +27,7 @@
 		D327BC7029B3CB7900C620F5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D327BC6F29B3CB7900C620F5 /* FirebaseAuth */; };
 		D327BC7229B3CFF200C620F5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC7129B3CFF200C620F5 /* RegisterView.swift */; };
 		D327BC7729B3D08500C620F5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC7629B3D08500C620F5 /* Color.swift */; };
+		D346029529BDEFB3003967EB /* AnyGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D346029429BDEFB3003967EB /* AnyGestureRecognizer.swift */; };
 		D3FC9D7629B4983000383D83 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FC9D7529B4983000383D83 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		D327BC6C29B3CAC300C620F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D327BC7129B3CFF200C620F5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D327BC7629B3D08500C620F5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D346029429BDEFB3003967EB /* AnyGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyGestureRecognizer.swift; sourceTree = "<group>"; };
 		D3FC9D7529B4983000383D83 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				D327BC4929B36D7500C620F5 /* UI */,
+				D346029129BDEC97003967EB /* utils */,
 				D327BC4A29B36D7E00C620F5 /* resources */,
 				D327BC3529B36AD900C620F5 /* AppDelegate.swift */,
 				D327BC3729B36AD900C620F5 /* SceneDelegate.swift */,
@@ -207,6 +210,14 @@
 			path = colors;
 			sourceTree = "<group>";
 		};
+		D346029129BDEC97003967EB /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D346029429BDEFB3003967EB /* AnyGestureRecognizer.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +305,7 @@
 				D327BC7229B3CFF200C620F5 /* RegisterView.swift in Sources */,
 				D327BC6729B3710500C620F5 /* ProfileView.swift in Sources */,
 				D327BC3629B36AD900C620F5 /* AppDelegate.swift in Sources */,
+				D346029529BDEFB3003967EB /* AnyGestureRecognizer.swift in Sources */,
 				D327BC3829B36AD900C620F5 /* SceneDelegate.swift in Sources */,
 				D327BC5329B36F0800C620F5 /* Coordinator.swift in Sources */,
 				D3FC9D7629B4983000383D83 /* LoginView.swift in Sources */,

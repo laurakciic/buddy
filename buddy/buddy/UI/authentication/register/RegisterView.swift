@@ -99,6 +99,7 @@ struct RegisterView: View {
                             .submitLabel(.next)
                             .opacity(isPasswordVisible ? 1 : 0)
                     }
+                    .textInputAutocapitalization(.never)
                     .onSubmit {
                         self.focus = .confirmPassword
                     }
@@ -126,6 +127,7 @@ struct RegisterView: View {
                             .submitLabel(.go)
                             .opacity(isPasswordVisible ? 1 : 0)
                     }
+                    .textInputAutocapitalization(.never)
                     .onSubmit {
                         registerWithEmailPassword()
                         

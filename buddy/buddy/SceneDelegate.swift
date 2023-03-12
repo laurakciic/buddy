@@ -22,6 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         coordinator = RootCoordinator()
         window?.rootViewController = coordinator.start()
         window?.makeKeyAndVisible()
+        
+        // any keyboard on any view will be closed on touch or drag outside
+        let tapGesture = AnyGestureRecognizer(target: window, action:#selector(UIView.endEditing))
+        tapGesture.requiresExclusiveTouchType = false
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self  // don't use window as delegate to minimize possible side effects
+        window?.addGestureRecognizer(tapGesture)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -53,5 +60,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+// to allow simultaneous touches
+
+extension SceneDelegate: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
 

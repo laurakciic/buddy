@@ -98,6 +98,7 @@ struct LoginView: View {
                             .submitLabel(.go)
                             .opacity(isPasswordVisible ? 1 : 0)
                     }
+                    .textInputAutocapitalization(.never)
                     .onSubmit {
                         loginWithEmailPassword()
                     }
