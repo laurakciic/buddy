@@ -16,21 +16,18 @@ private enum FocusableField: Hashable {
 struct LoginView: View {
     
     @ObservedObject var viewModel = AuthenticationViewModel()
-    @Environment(\.dismiss) var dismiss
     
     @FocusState private var focus: FocusableField?
     @State private var isPasswordVisible: Bool = false
+    var onAuthenticatedGoToMain: (() -> Void)?
     
     private func loginWithEmailPassword() {
         Task {
             if await viewModel.loginWithEmailPassword() == true {
                 onAuthenticatedGoToMain?()
-                dismiss()
             }
         }
     }
-    
-    var onAuthenticatedGoToMain: (() -> Void)?
     
     var body: some View {
         VStack(spacing: 0) {
@@ -89,11 +86,13 @@ struct LoginView: View {
                 HStack {
                     ZStack {
                         SecureField("Password", text: $viewModel.password)
+                            .autocorrectionDisabled(true)
                             .focused($focus, equals: .password)
                             .submitLabel(.go)
                             .opacity(isPasswordVisible ? 0 : 1)
                         
                         TextField("Password", text: $viewModel.password)
+                            .autocorrectionDisabled(true)
                             .focused($focus, equals: .password)
                             .submitLabel(.go)
                             .opacity(isPasswordVisible ? 1 : 0)
@@ -135,12 +134,8 @@ struct LoginView: View {
                 }
                 else {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                      .fontWeight(.bold)
-                      .padding(.vertical, 10)
-                      .padding(.horizontal, 130)
-                      .background(Color.darkPurple)
-                      .clipShape(Capsule())
+                        .progressViewStyle(CircularProgressViewStyle(tint: .darkPurple))
+                        .padding(.vertical, 10)
                 }
             }
             .padding(.top, 50)

@@ -11,7 +11,7 @@ import FirebaseAuth
 final class RootCoordinator: Coordinator {
     
     private var userLoggedIn: Bool = false
-    private var childCoordinators: [Coordinator] = [AuthenticaionCoordinator(), MainCoordinator()]
+    private var childCoordinators: [Coordinator] = [AuthenticationCoordinator(), MainCoordinator()]
     
     func start() -> UIViewController {
         checkUserAuthentication()

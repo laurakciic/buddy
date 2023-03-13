@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import FirebaseAuth
 
+@MainActor
 final class ProfileViewModel: ObservableObject {
-
+    
+    var goToAuth: (() -> Void)?
+    
 }

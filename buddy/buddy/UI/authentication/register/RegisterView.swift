@@ -17,21 +17,19 @@ private enum FocusableField: Hashable {
 struct RegisterView: View {
     
     @ObservedObject var viewModel: AuthenticationViewModel
-    @Environment(\.dismiss) var dismiss
     
     @FocusState private var focus: FocusableField?
     @State private var isPasswordVisible: Bool = false
+    
+    var onAuthenticatedGoToMain: (() -> Void)?
     
     private func registerWithEmailPassword() {
         Task {
             if await viewModel.registerWithEmailPassword() == true {
                 onAuthenticatedGoToMain?()
-                dismiss()
             }
         }
     }
-    
-    var onAuthenticatedGoToMain: (() -> Void)?
     
     var body: some View {
         VStack(spacing: 0) {
@@ -90,11 +88,13 @@ struct RegisterView: View {
                 HStack {
                     ZStack {
                         SecureField("Password", text: $viewModel.password)
+                            .autocorrectionDisabled(true)
                             .focused($focus, equals: .password)
                             .submitLabel(.next)
                             .opacity(isPasswordVisible ? 0 : 1)
                         
                         TextField("Password", text: $viewModel.password)
+                            .autocorrectionDisabled(true)
                             .focused($focus, equals: .password)
                             .submitLabel(.next)
                             .opacity(isPasswordVisible ? 1 : 0)
@@ -117,12 +117,14 @@ struct RegisterView: View {
                 HStack {
                     ZStack {
                         SecureField("Confirm password", text: $viewModel.confirmPassword)
+                            .autocorrectionDisabled(true)
                             .focused($focus, equals: .confirmPassword)
                             .submitLabel(.go)
                             .opacity(isPasswordVisible ? 0 : 1)
                             
                         
                         TextField("Confirm password", text: $viewModel.confirmPassword)
+                            .autocorrectionDisabled(true)
                             .focused($focus, equals: .confirmPassword)
                             .submitLabel(.go)
                             .opacity(isPasswordVisible ? 1 : 0)
@@ -168,12 +170,8 @@ struct RegisterView: View {
                 }
                 else {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                      .fontWeight(.bold)
-                      .padding(.vertical, 10)
-                      .padding(.horizontal, 130)
-                      .background(Color.darkPurple)
-                      .clipShape(Capsule())
+                        .progressViewStyle(CircularProgressViewStyle(tint: .darkPurple))
+                        .padding(.vertical, 10)
                 }
             }
             .padding(.top, 50)

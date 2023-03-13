@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-final class AuthenticaionCoordinator: Coordinator {
+final class AuthenticationCoordinator: Coordinator {
     
     private var childCoordinator: Coordinator!
     private var navigationController = UINavigationController()
@@ -21,11 +21,11 @@ final class AuthenticaionCoordinator: Coordinator {
         let authVM = AuthenticationViewModel()
         let authVC = UIHostingController(rootView: AuthenticationView(viewModel: authVM))
                         
-        authVM.onAuthenticatedGoToMain = { [weak self] in
-            self?.goToMain()
+        authVM.onAuthenticatedGoToMain = {
+            self.goToMain()
         }
         
-        navigationController.setViewControllers([authVC], animated: false)
+        navigationController.setViewControllers([authVC], animated: true)
         return navigationController
     }
     
@@ -34,6 +34,6 @@ final class AuthenticaionCoordinator: Coordinator {
         let mainVC = mainCoordinator.start()
         
         mainVC.modalPresentationStyle = .fullScreen
-        self.navigationController.present(mainVC, animated: false)
+        self.navigationController.present(mainVC, animated: true)
     }
 }
