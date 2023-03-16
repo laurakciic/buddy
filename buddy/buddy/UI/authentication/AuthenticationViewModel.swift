@@ -21,6 +21,7 @@ enum AuthenticationFlow {
 
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
+    
     @Published var email = ""
     @Published var password = ""
     @Published var confirmPassword = ""
@@ -37,15 +38,6 @@ final class AuthenticationViewModel: ObservableObject {
     
     init() {
         registerAuthStateHandler()
-        
-        $flow
-            .combineLatest($email, $password, $confirmPassword)
-            .map { flow, email, password, confirmPassword in
-                flow == .login
-                 ? !(email.isEmpty || password.isEmpty)
-                 : !(email.isEmpty || password.isEmpty || confirmPassword.isEmpty)
-            }
-            .assign(to: &$isValid)
     }
     
     private var authStateHandler: AuthStateDidChangeListenerHandle?
@@ -64,6 +56,9 @@ final class AuthenticationViewModel: ObservableObject {
     func switchFlow() {
         flow = flow == .login ? .register : .login
         errorMessage = ""
+        email = ""
+        password = ""
+        confirmPassword = ""
     }
 }
 
