@@ -27,6 +27,8 @@
 		D327BC7029B3CB7900C620F5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D327BC6F29B3CB7900C620F5 /* FirebaseAuth */; };
 		D327BC7229B3CFF200C620F5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC7129B3CFF200C620F5 /* RegisterView.swift */; };
 		D327BC7729B3D08500C620F5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC7629B3D08500C620F5 /* Color.swift */; };
+		D327D15E29DB4C9200215ABF /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327D15D29DB4C9200215ABF /* PersistenceService.swift */; };
+		D327D16129DB4D7A00215ABF /* PersistenceServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327D16029DB4D7A00215ABF /* PersistenceServiceProtocol.swift */; };
 		D346029529BDEFB3003967EB /* AnyGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D346029429BDEFB3003967EB /* AnyGestureRecognizer.swift */; };
 		D3FC9D7629B4983000383D83 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FC9D7529B4983000383D83 /* LoginView.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		D327BC6C29B3CAC300C620F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D327BC7129B3CFF200C620F5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D327BC7629B3D08500C620F5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D327D15D29DB4C9200215ABF /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		D327D16029DB4D7A00215ABF /* PersistenceServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceProtocol.swift; sourceTree = "<group>"; };
 		D346029429BDEFB3003967EB /* AnyGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyGestureRecognizer.swift; sourceTree = "<group>"; };
 		D3FC9D7529B4983000383D83 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +92,7 @@
 		D327BC3429B36AD900C620F5 /* buddy */ = {
 			isa = PBXGroup;
 			children = (
+				D327D15A29DB4BC100215ABF /* services */,
 				D327BC4929B36D7500C620F5 /* UI */,
 				D346029129BDEC97003967EB /* utils */,
 				D327BC4A29B36D7E00C620F5 /* resources */,
@@ -210,6 +215,23 @@
 			path = colors;
 			sourceTree = "<group>";
 		};
+		D327D15A29DB4BC100215ABF /* services */ = {
+			isa = PBXGroup;
+			children = (
+				D327D15F29DB4D5800215ABF /* persistence */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		D327D15F29DB4D5800215ABF /* persistence */ = {
+			isa = PBXGroup;
+			children = (
+				D327D15D29DB4C9200215ABF /* PersistenceService.swift */,
+				D327D16029DB4D7A00215ABF /* PersistenceServiceProtocol.swift */,
+			);
+			path = persistence;
+			sourceTree = "<group>";
+		};
 		D346029129BDEC97003967EB /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,11 +323,13 @@
 				D327BC5B29B3705C00C620F5 /* MapCoordinator.swift in Sources */,
 				D327BC7729B3D08500C620F5 /* Color.swift in Sources */,
 				D327BC5729B36FA800C620F5 /* AuthenticationCoordinator.swift in Sources */,
+				D327D16129DB4D7A00215ABF /* PersistenceServiceProtocol.swift in Sources */,
 				D327BC6929B3716400C620F5 /* AuthenticationView.swift in Sources */,
 				D327BC7229B3CFF200C620F5 /* RegisterView.swift in Sources */,
 				D327BC6729B3710500C620F5 /* ProfileView.swift in Sources */,
 				D327BC3629B36AD900C620F5 /* AppDelegate.swift in Sources */,
 				D346029529BDEFB3003967EB /* AnyGestureRecognizer.swift in Sources */,
+				D327D15E29DB4C9200215ABF /* PersistenceService.swift in Sources */,
 				D327BC3829B36AD900C620F5 /* SceneDelegate.swift in Sources */,
 				D327BC5329B36F0800C620F5 /* Coordinator.swift in Sources */,
 				D3FC9D7629B4983000383D83 /* LoginView.swift in Sources */,
@@ -459,8 +483,8 @@
 				INFOPLIST_FILE = buddy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,9 +492,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.laurakovacic.buddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -487,8 +514,8 @@
 				INFOPLIST_FILE = buddy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,9 +523,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.laurakovacic.buddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

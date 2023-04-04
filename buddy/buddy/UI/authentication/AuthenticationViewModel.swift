@@ -22,35 +22,24 @@ enum AuthenticationFlow {
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
     
+    private var persistenceService: PersistenceService
+    
     @Published var email = ""
     @Published var password = ""
     @Published var confirmPassword = ""
     
     @Published var flow: AuthenticationFlow = .login
     
-    @Published var isValid = false
     @Published var authenticationState: AuthenticationState = .unauthenticated
     @Published var errorMessage = ""
-    @Published var user: User?
-    @Published var displayName = ""
     
     var onAuthenticatedGoToMain: (() -> Void)?
     
+    var displayName: String {   return persistenceService.displayName   }
+    var user: User? {   return persistenceService.user  }
+    
     init() {
-        registerAuthStateHandler()
-    }
-    
-    private var authStateHandler: AuthStateDidChangeListenerHandle?
-    
-    // Firebase maintains login state, here we are reflecting it in the application state
-    func registerAuthStateHandler() {
-        if authStateHandler == nil {
-            authStateHandler = Auth.auth().addStateDidChangeListener { auth, user in
-                self.user = user
-                self.authenticationState = user == nil ? .unauthenticated : .authenticated
-                self.displayName = user?.email ?? ""
-            }
-        }
+        self.persistenceService = PersistenceService()
     }
     
     func switchFlow() {
@@ -108,7 +97,7 @@ extension AuthenticationViewModel {
     
     func deleteAccount() async -> Bool {
         do {
-            try await user?.delete()
+            try await persistenceService.user?.delete()
             return true
         }
         catch {

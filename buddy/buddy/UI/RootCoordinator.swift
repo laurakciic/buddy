@@ -6,28 +6,23 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 final class RootCoordinator: Coordinator {
     
-    private var userLoggedIn: Bool = false
-    private var childCoordinators: [Coordinator] = [AuthenticationCoordinator(), MainCoordinator()]
+    private var childCoordinator: Coordinator?
+    private let persistanceService: PersistenceService
     
-    func start() -> UIViewController {
-        checkUserAuthentication()
-        if userLoggedIn {
-            return childCoordinators[1].start()
-        } else {
-            return childCoordinators[0].start()
-        }
+    init() {
+        self.persistanceService = PersistenceService()
     }
     
-    private func checkUserAuthentication() {
-        if Auth.auth().currentUser != nil {
-            userLoggedIn = true
+    func start() -> UIViewController {
+        if persistanceService.isLoggedIn {
+            childCoordinator = MainCoordinator()
         } else {
-            userLoggedIn = false
+            childCoordinator = AuthenticationCoordinator()
         }
+        return childCoordinator!.start()
     }
 }
 
