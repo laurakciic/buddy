@@ -119,7 +119,7 @@ struct LoginView: View {
                     Text(viewModel.errorMessage)
                         .foregroundColor(Color(UIColor.systemRed))
                 }
-                .padding(.top)
+                .padding([.top, .horizontal])
             }
             
             Button(action: loginWithEmailPassword) {

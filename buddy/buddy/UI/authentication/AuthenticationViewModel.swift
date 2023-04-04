@@ -74,8 +74,13 @@ extension AuthenticationViewModel {
         authenticationState = .authenticating
         
         do {
-            try await Auth.auth().createUser(withEmail: email, password: password)
-            return true
+            if passwordsMatch(password, confirmPassword) {
+                try await Auth.auth().createUser(withEmail: email, password: password)
+                return true
+            } else {
+                authenticationState = .unauthenticated
+                return false
+            }
         }
         catch {
             print(error)
@@ -104,5 +109,13 @@ extension AuthenticationViewModel {
             errorMessage = error.localizedDescription
             return false
         }
+    }
+    
+    func passwordsMatch(_ password: String, _ confirmPassword: String) -> Bool {
+        if password != confirmPassword {
+            errorMessage = "Passwords do not match."
+            return false
+        }
+        return true
     }
 }
