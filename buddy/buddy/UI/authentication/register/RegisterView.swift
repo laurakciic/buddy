@@ -132,10 +132,6 @@ struct RegisterView: View {
                     .textInputAutocapitalization(.never)
                     .onSubmit {
                         registerWithEmailPassword()
-                        
-                        if viewModel.authenticationState == .authenticated {
-                            onAuthenticatedGoToMain?()
-                        }
                     }
                     
                     Image(systemName: isPasswordVisible ? "eye.fill" : "eye.slash.fill")
