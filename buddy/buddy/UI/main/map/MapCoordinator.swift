@@ -26,4 +26,8 @@ final class MapCoordinator: Coordinator {
 
         return mapVC
     }
+    
+    deinit {
+        print("Map coordinator deinitialized")
+    }
 }

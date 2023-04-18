@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coordinator: RootCoordinator!
+    var coordinator: RootCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -19,8 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        coordinator = RootCoordinator()
-        window?.rootViewController = coordinator.start()
+        
+        self.coordinator = RootCoordinator(persistenceService: PersistenceService())
+        window?.rootViewController = coordinator!.start()
+        
         window?.makeKeyAndVisible()
         
         // any keyboard on any view will be closed on touch or drag outside

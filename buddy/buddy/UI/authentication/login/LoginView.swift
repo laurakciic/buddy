@@ -15,7 +15,7 @@ private enum FocusableField: Hashable {
 
 struct LoginView: View {
     
-    @ObservedObject var viewModel = AuthenticationViewModel()
+    @ObservedObject var viewModel: AuthenticationViewModel
     
     @FocusState private var focus: FocusableField?
     @State private var isPasswordVisible: Bool = false
@@ -165,6 +165,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: AuthenticationViewModel())
+        LoginView(viewModel: AuthenticationViewModel(persistenceService: PersistenceService()))
     }
 }

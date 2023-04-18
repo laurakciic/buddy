@@ -10,21 +10,26 @@ import UIKit
 
 final class ProfileCoordinator: Coordinator {
     
+    weak var rootCoordinator: RootCoordinator?
     private var navigationController = UINavigationController()
-
+    
+    init(rootCoordinator: RootCoordinator) {
+        self.rootCoordinator = rootCoordinator
+    }
+    
     @MainActor func start() -> UIViewController {
         return createProfileViewController()
     }
 
     @MainActor func createProfileViewController() -> UIViewController {
         let profileVM = ProfileViewModel()
-        let authVM = AuthenticationViewModel()
+        let authVM = AuthenticationViewModel(persistenceService: PersistenceService())
 
         let profileVC = UIHostingController(rootView: ProfileView(authVM: authVM, profileVM: profileVM))
         profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
 
-        profileVM.goToAuth = {
-            self.goToAuthentication()
+        profileVM.goToAuth = { [weak self] in
+            self?.goToAuthentication()
         }
         
         navigationController.setViewControllers([profileVC], animated: true)
@@ -32,10 +37,17 @@ final class ProfileCoordinator: Coordinator {
     }
     
     @MainActor private func goToAuthentication() {
-        let authCoordinator = AuthenticationCoordinator()
-        let authVC = authCoordinator.start()
+        guard let rootCoordinator = rootCoordinator else {
+            fatalError("Root coordinator is missing.")
+        }
 
-        authVC.modalPresentationStyle = .fullScreen
-        self.navigationController.present(authVC, animated: true)
+        let rootVC = rootCoordinator.start()
+        
+        rootVC.modalPresentationStyle = .fullScreen
+        self.navigationController.present(rootVC, animated: true)
+    }
+    
+    deinit {
+        print("Profile coordinator deinitialized")
     }
 }

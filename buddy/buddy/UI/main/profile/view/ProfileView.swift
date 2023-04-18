@@ -30,7 +30,7 @@ struct ProfileView: View {
     var body: some View {
         Form {
             Section("Email") {
-                Text(authVM.displayName)
+                Text(authVM.persistenceService.displayName)
             }
             
             Section {
@@ -63,6 +63,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(authVM: AuthenticationViewModel(), profileVM: ProfileViewModel())
+        ProfileView(authVM: AuthenticationViewModel(persistenceService: PersistenceService()), profileVM: ProfileViewModel())
     }
 }

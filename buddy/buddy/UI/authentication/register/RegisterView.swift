@@ -197,6 +197,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(viewModel: AuthenticationViewModel())
+        RegisterView(viewModel: AuthenticationViewModel(persistenceService: PersistenceService()))
     }
 }

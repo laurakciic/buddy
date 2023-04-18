@@ -22,7 +22,8 @@ enum AuthenticationFlow {
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
     
-    private var persistenceService: PersistenceService
+    var onAuthenticatedGoToMain: (() -> Void)?
+    var persistenceService: PersistenceService
     
     @Published var email = ""
     @Published var password = ""
@@ -33,13 +34,8 @@ final class AuthenticationViewModel: ObservableObject {
     @Published var authenticationState: AuthenticationState = .unauthenticated
     @Published var errorMessage = ""
     
-    var onAuthenticatedGoToMain: (() -> Void)?
-    
-    var displayName: String {   return persistenceService.displayName   }
-    var user: User? {   return persistenceService.user  }
-    
-    init() {
-        self.persistenceService = PersistenceService()
+    init(persistenceService: PersistenceService) {
+        self.persistenceService = persistenceService
     }
     
     func switchFlow() {

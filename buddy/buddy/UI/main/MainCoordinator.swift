@@ -12,15 +12,18 @@ final class MainCoordinator: Coordinator {
     private var navigationController = UINavigationController()
     private var tabBarController = UITabBarController()
     private var childCoordinators = [Coordinator]()
+    weak var parentCoordinator: RootCoordinator?
 
     func start() -> UIViewController {
         return startTabBar()
     }
 
     func startTabBar() -> UINavigationController {
+        guard let rootCoordinator = parentCoordinator else { fatalError("Parent coordinator is missing.") }
+        
         childCoordinators = [
             MapCoordinator(navigationController: navigationController),
-            ProfileCoordinator()
+            ProfileCoordinator(rootCoordinator: rootCoordinator)
         ]
 
         createTabBar()
@@ -40,5 +43,9 @@ final class MainCoordinator: Coordinator {
         tabBarController.viewControllers = childCoordinators.map { coordinator in
             coordinator.start()
         }
+    }
+    
+    deinit {
+        print("Main coordinator deinitialized")
     }
 }

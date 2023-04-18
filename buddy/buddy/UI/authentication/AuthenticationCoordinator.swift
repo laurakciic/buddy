@@ -10,30 +10,35 @@ import SwiftUI
 
 final class AuthenticationCoordinator: Coordinator {
     
-    private var childCoordinator: Coordinator!
     private var navigationController = UINavigationController()
+    weak var parentCoordinator: RootCoordinator?
     
     @MainActor func start() -> UIViewController {
         return showAuthentication()
     }
     
     @MainActor func showAuthentication() -> UIViewController {
-        let authVM = AuthenticationViewModel()
+        let authVM = AuthenticationViewModel(persistenceService: PersistenceService())
         let authVC = UIHostingController(rootView: AuthenticationView(viewModel: authVM))
                         
-        authVM.onAuthenticatedGoToMain = {
-            self.goToMain()
+        authVM.onAuthenticatedGoToMain = { [weak self] in
+            self?.callRoot()
         }
         
         navigationController.setViewControllers([authVC], animated: true)
         return navigationController
     }
     
-    private func goToMain() {
-        let mainCoordinator = MainCoordinator()
-        let mainVC = mainCoordinator.start()
+    private func callRoot() {
+        guard let rootCoordinator = parentCoordinator else { fatalError("Parent coordinator is missing.") }
         
-        mainVC.modalPresentationStyle = .fullScreen
-        self.navigationController.present(mainVC, animated: true)
+        let parentVC = rootCoordinator.start()
+
+        parentVC.modalPresentationStyle = .fullScreen
+        self.navigationController.present(parentVC, animated: true)
+    }
+    
+    deinit {
+        print("Authentication coordinator deinitialized")
     }
 }

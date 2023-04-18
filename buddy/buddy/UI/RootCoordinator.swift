@@ -12,17 +12,25 @@ final class RootCoordinator: Coordinator {
     private var childCoordinator: Coordinator?
     private let persistanceService: PersistenceService
     
-    init() {
-        self.persistanceService = PersistenceService()
+    init(persistenceService: PersistenceService) {
+        self.persistanceService = persistenceService
     }
     
     func start() -> UIViewController {
         if persistanceService.isLoggedIn {
-            childCoordinator = MainCoordinator()
+            let mainCoordinator = MainCoordinator()
+            mainCoordinator.parentCoordinator = self
+            childCoordinator = mainCoordinator
         } else {
-            childCoordinator = AuthenticationCoordinator()
+            let authCoordinator = AuthenticationCoordinator()
+            authCoordinator.parentCoordinator = self
+            childCoordinator = authCoordinator
         }
         return childCoordinator!.start()
+    }
+    
+    deinit {
+        print("Root coordinator deinitialized")
     }
 }
 
