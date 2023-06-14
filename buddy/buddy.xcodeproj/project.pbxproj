@@ -29,6 +29,7 @@
 		D327BC7729B3D08500C620F5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327BC7629B3D08500C620F5 /* Color.swift */; };
 		D327D15E29DB4C9200215ABF /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327D15D29DB4C9200215ABF /* PersistenceService.swift */; };
 		D346029529BDEFB3003967EB /* AnyGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D346029429BDEFB3003967EB /* AnyGestureRecognizer.swift */; };
+		D3D9767F2A39B80B0043CC13 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D9767E2A39B80B0043CC13 /* UIViewController.swift */; };
 		D3FC9D7629B4983000383D83 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FC9D7529B4983000383D83 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		D327BC7629B3D08500C620F5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D327D15D29DB4C9200215ABF /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		D346029429BDEFB3003967EB /* AnyGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyGestureRecognizer.swift; sourceTree = "<group>"; };
+		D3D9767E2A39B80B0043CC13 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D3FC9D7529B4983000383D83 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,9 +234,18 @@
 		D346029129BDEC97003967EB /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				D3D9767D2A39B7E30043CC13 /* extensions */,
 				D346029429BDEFB3003967EB /* AnyGestureRecognizer.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		D3D9767D2A39B7E30043CC13 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D3D9767E2A39B80B0043CC13 /* UIViewController.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				D327D15E29DB4C9200215ABF /* PersistenceService.swift in Sources */,
 				D327BC3829B36AD900C620F5 /* SceneDelegate.swift in Sources */,
 				D327BC5329B36F0800C620F5 /* Coordinator.swift in Sources */,
+				D3D9767F2A39B80B0043CC13 /* UIViewController.swift in Sources */,
 				D3FC9D7629B4983000383D83 /* LoginView.swift in Sources */,
 				D327BC6529B370F100C620F5 /* ProfileViewModel.swift in Sources */,
 				D327BC6029B3709D00C620F5 /* MapView.swift in Sources */,

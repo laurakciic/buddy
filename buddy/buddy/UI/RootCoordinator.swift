@@ -30,7 +30,7 @@ final class RootCoordinator: Coordinator {
     }
     
     deinit {
-        print("Root coordinator deinitialized")
+        print("Root Coordinator deinitialized")
     }
 }
 

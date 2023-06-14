@@ -28,6 +28,6 @@ final class MapCoordinator: Coordinator {
     }
     
     deinit {
-        print("Map coordinator deinitialized")
+        print("Map Coordinator deinitialized")
     }
 }

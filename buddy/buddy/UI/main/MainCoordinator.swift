@@ -19,7 +19,7 @@ final class MainCoordinator: Coordinator {
     }
 
     func startTabBar() -> UINavigationController {
-        guard let rootCoordinator = parentCoordinator else { fatalError("Parent coordinator is missing.") }
+        guard let rootCoordinator = parentCoordinator else { fatalError("Parent Coordinator missing.") }
         
         childCoordinators = [
             MapCoordinator(navigationController: navigationController),
@@ -28,6 +28,9 @@ final class MainCoordinator: Coordinator {
 
         createTabBar()
         navigationController.viewControllers = [tabBarController]
+        
+        /** similar to AuthenticationCoordinator, we call showAsRoot() to start a completely new flow of the application (showing the actual tabbar/app instead of being on Authentication screen) */
+        navigationController.showAsRoot()
         return navigationController
     }
 
@@ -46,6 +49,6 @@ final class MainCoordinator: Coordinator {
     }
     
     deinit {
-        print("Main coordinator deinitialized")
+        print("Main Coordinator deinitialized")
     }
 }

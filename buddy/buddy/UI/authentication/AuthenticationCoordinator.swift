@@ -26,19 +26,23 @@ final class AuthenticationCoordinator: Coordinator {
         }
         
         navigationController.setViewControllers([authVC], animated: true)
+        
+        /** By using showAsRoot() we remove any presented view controllers and navigationControllers from previous Coordinators,
+         and we start a new flow -> therefore clearing the memory of any previous flows */
+        navigationController.showAsRoot()
+        
         return navigationController
     }
     
     private func callRoot() {
-        guard let rootCoordinator = parentCoordinator else { fatalError("Parent coordinator is missing.") }
+        guard let rootCoordinator = parentCoordinator else { fatalError("Parent Coordinator missing.") }
         
-        let parentVC = rootCoordinator.start()
-
-        parentVC.modalPresentationStyle = .fullScreen
-        self.navigationController.present(parentVC, animated: true)
+        /** We dont need to present from current navigationController, we just call the start method and the showAsRoot() method
+         handles switching the rootViewController that is presented in the app */
+        _ = rootCoordinator.start()
     }
     
     deinit {
-        print("Authentication coordinator deinitialized")
+        print("Authentication Coordinator deinitialized")
     }
 }

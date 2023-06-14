@@ -88,7 +88,8 @@ extension AuthenticationViewModel {
     
     func signOut() {
         do {
-            try Auth.auth().signOut()   // await not necessary since signing out does not require reaching to backend (only resetting local auth state)
+            /** await not necessary since signing out does not require reaching to backend (only resetting local auth state) */
+            try Auth.auth().signOut()
         }
         catch {
             print(error)

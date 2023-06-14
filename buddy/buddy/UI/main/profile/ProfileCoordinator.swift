@@ -38,16 +38,14 @@ final class ProfileCoordinator: Coordinator {
     
     @MainActor private func goToAuthentication() {
         guard let rootCoordinator = rootCoordinator else {
-            fatalError("Root coordinator is missing.")
+            fatalError("Root Coordinator missing.")
         }
 
-        let rootVC = rootCoordinator.start()
-        
-        rootVC.modalPresentationStyle = .fullScreen
-        self.navigationController.present(rootVC, animated: true)
+        /** same reason as previously, no need to add rootVC to navigation stack because we are completely switching flows */
+        _ = rootCoordinator.start()
     }
     
     deinit {
-        print("Profile coordinator deinitialized")
+        print("Profile Coordinator deinitialized")
     }
 }
